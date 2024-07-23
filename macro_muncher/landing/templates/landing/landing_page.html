@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macro Muncher</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-links">
+            <a href="#" class="dark-green">Home</a>
+            <a href="#" class="dark-gray">Team</a>
+            <a href="#" class="dark-gray">Blog</a>
+            <a href="#" class="dark-gray">Contact</a>
+        </div>
+        <div class="account-actions">
+            <button class="block button">Sign Up</button>
+            <button class="block button">Log In</button>
+        </div>
+    </nav>
+    <section class="jumbotron">
+        <h1 class="dark">Get More From Your Food</h1>
+        <h1 class="dark-green">Crunch Your Macros</h1>
+        <form action="">
+            <input type="email" class="block" placeholder="Enter your email">
+            <input type="submit" class="block button" value="Submit">
+        </form>
+    </section>
+    <main class="features">
+        <div class="features-card block">
+            <div class="features-card-icon block">
+                <img src="{% static 'images/cutlery.png' %}" alt="Icon of a fork and spoon">
+            </div>
+            <div class="features-card-text">
+                <h2>Macro Tracking</h2>
+                <p>We'll automatically calculate your macros and stay on track with your goals! Protein, Fats, and Carbs are all tracked easily. All you have to do is enter the information.</p>
+            </div>
+            <div class="features-card-footer">
+                <a href="#">Read More &rarr;</a>
+            </div>
+        </div>
+        <div class="features-card block">
+            <div class="features-card-icon block">
+                <img src="{% static 'images/weight.png' %}" alt="Icon of a weight scale">
+            </div>
+            <div class="features-card-text">
+                <h2>Weight Tracking</h2>
+                <p>We'll automatically determine whether you're on pace for your weight goals! Just enter your measurements and we'll show you how many more days you have left to meet your goal.</p>
+            </div>
+            <div class="features-card-footer">
+                <a href="#">Read More &rarr;</a>
+            </div>
+        </div>
+        <div class="features-card block">
+            <div class="features-card-icon block">
+                <img src="{% static 'images/dumbbell.png' %}" alt="Icon of a dumbbell">
+            </div>
+            <div class="features-card-text">
+                <h2>Exercise Tracking</h2>
+                <p>Wanting to track gains in your workouts and modify your weight and macro goals as a result? Enter in your workout data or connect a health app and we'll do the rest.</p>
+            </div>
+            <div class="features-card-footer">
+                <a href="#">Read More &rarr;</a>
+            </div>
+        </div>
+    </main>
+    <div class="testimonials-bar">
+        <hr>
+        <span class="block">Testimonials</span>
+    </div>
+    <section class="testimonials">
+        <div class="testimonials-carousel">
+            <article class="testimonial-individual block">
+                <div class="testimonial-image block">
+                    <img src="{% static 'images/headshot-1.jpg' %}" alt="testimonial headshot">
+                </div>
+                <div class="testimonial-text">
+                    <p class="testimonial-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt accusamus quaerat tempore dignissimos, consequuntur voluptatem error libero quae, ipsam sapiente fugit, reiciendis architecto veritatis fugiat temporibus. Aliquid doloremque eligendi aliquam!</p>
+                    <p class="testimonial-client">Jim Bob</p>
+                    <p class="testimonial-client-title dark-green">Gym Enthusiast</p>
+                </div>
+            </article>
+            <article class="testimonial-individual block">
+                <div class="testimonial-image block">
+                    <img src="{% static 'images/headshot-2.jpg' %}" alt="testimonial headshot">
+                </div>
+                <div class="testimonial-text">
+                    <p class="testimonial-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt accusamus quaerat tempore dignissimos, consequuntur voluptatem error libero quae, ipsam sapiente fugit. Aliquid doloremque eligendi aliquam!</p>
+                    <p class="testimonial-client">Jane Doe</p>
+                    <p class="testimonial-client-title dark-green">Personal Trainer</p>
+                </div>
+            </article>
+            <article class="testimonial-individual block">
+                <div class="testimonial-image block">
+                    <img src="{% static 'images/headshot-3.jpg' %}" alt="testimonial headshot">
+                </div>
+                <div class="testimonial-text">
+                    <p class="testimonial-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt accusamus quaerat tempore dignissimos, aliquid doloremque eligendi aliquam!</p>
+                    <p class="testimonial-client">John Q Public</p>
+                    <p class="testimonial-client-title dark-green">Nutritionist</p>
+                </div>
+            </article>
+            <div class="testimonials-carousel-controls">
+                <span class="dot dot-active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+    <section class="final-cta">
+        <div class="final-cta-headings">
+            <h1 class="dark">Ready to take more control?</h1>
+            <h1 class="dark-green">Start your free trial today</h1>
+        </div>
+        <div class="final-cta-actions">
+            <button class="block button">Get Started</button>
+            <button class="block button cta-learn-more">Learn More</button>
+        </div>
+    </section>
+    <footer>
+        <h6 class="copyright">2024 Macro Muncher, LLC. All rights reserved.</h6>
+        <div class="social-feeds">
+            <div class="social-feeds-logo block">
+                <img src="{% static 'images/fbook.png' %}" alt="facebook logo">
+            </div>
+            <div class="social-feeds-logo block">
+                <img src="{% static 'images/insta.png' %}" alt="instagram logo">
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
