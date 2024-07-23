@@ -1,0 +1,321 @@
+/* minor reset */
+* {
+    /* border: 1px dashed red; */
+    margin: 0;
+    padding: 0;
+}
+
+/* color-scheme */
+.dark-green {
+    color: rgb(0 174 134);
+}
+.light-green {
+    color: rgb(204 239 231);
+}
+.dark {
+    color: rgb(17 24 40);
+}
+.dark-gray {
+    color: rgb(107 114 129);
+}
+.shadow {
+    color: rgb(51 60 58);
+}
+.off-white {
+    color: rgb(250 250 250);
+}
+.black {
+    color: rgb(10 10 10);
+}
+.blue {
+    color: rgb(58 94 197);
+}
+.light-gray {
+    color: rgb(249 250 252);
+}
+/* blocks with drop shadows */
+.block {
+    border: 2px solid rgb(10 10 10);
+    box-shadow: 5px 5px rgb(51 60 58);
+    border-radius: 3px;
+}
+
+/* buttons */
+
+.button {
+    background-color: rgb(0 174 134);
+    padding: 10px 30px;
+    color: rgb(250 250 250);
+}
+
+/* font-basis */
+body {
+    font-size: 1em;
+    font-family: sans-serif;
+}
+
+/* nav */
+.navbar {
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.navbar-links a {
+    font-size: 1.1em;
+    text-decoration: none;
+    margin: 0 1em;
+}
+.account-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+/* jumbotron */
+
+.jumbotron {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5em;
+    background-color: rgb(204 239 231);
+}
+.jumbotron h1 {
+    margin: 0.25em 0;
+    font-size: 1.8em;
+}
+.jumbotron form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.jumbotron form input {
+    margin: 0 10px;
+}
+.jumbotron form input[type="email"] {
+    padding: 10px;
+    padding-right: 140px;
+}
+::placeholder {
+    color: rgb(10 10 10);
+}
+
+/* features */
+
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: white;
+    padding: 5em 20px;
+}
+.features-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 275px;
+}
+.features-card-icon {
+    background-color: rgb(0 174 134);
+    padding: .5em;
+    position: relative;
+    bottom: 24px;
+    left: 20px;
+    width: 1.7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.features-card-icon img {
+    width: 1.5em;
+    height: 1.5em;
+    color: white;
+}
+.features-card-text {
+    padding: 0 20px 20px 20px;
+}
+.features-card-text h2 {
+    font-size: 1.2em;
+    font-weight: normal;
+}
+.features-card-text p {
+    margin-top: 20px;
+    font-size: .8em;
+    font-weight: lighter;
+}
+.features-card-footer {
+    background-color: rgb(249 250 252);
+    padding: 20px;
+    font-size: .9em;
+    font-weight: bold;
+    flex-grow: 1;
+}
+.features-card-footer a {
+    text-decoration: none;
+    color: rgb(0 174 134);
+}
+
+/* icon attributions */
+/* <a href="https://www.flaticon.com/free-icons/spoon" title="spoon icons">Spoon icons created by Ehtisham Abid - Flaticon</a> */
+/* <a href="https://www.flaticon.com/free-icons/weight" title="weight icons">Weight icons created by Those Icons - Flaticon</a> */
+/* <a href="https://www.flaticon.com/free-icons/dumbbell" title="dumbbell icons">Dumbbell icons created by Freepik - Flaticon</a> */
+
+/* testimonials bar */
+.testimonials-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 0;
+    position: relative;
+    top: 16px;
+}
+.testimonials-bar hr {
+    width: 75%;
+    border: 1px solid rgb(10 10 10);
+}
+.testimonials-bar span {
+    font-size: 1em;
+    font-weight: bold;
+    position: relative;
+    bottom: 16px;
+    background-color: white;
+    padding: 5px 10px;
+}
+
+/* testimonials carousel area */
+
+.testimonials {
+    padding: 5em 1.2em;
+    margin: 0 2em;
+}
+.testimonials-carousel {
+    position: relative;
+}
+.testimonial-individual {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 1em;
+    padding: 4em 10em;
+    height: 10em;
+}
+.testimonial-image {
+    height: 5em;
+}
+.testimonial-image img {
+    height: 5em;
+}
+.testimonial-text {
+    padding: 1em;
+    height: 10em;
+    background-image: url('../images/quote-left-light.png');
+    background-repeat: no-repeat;
+}
+.testimonial-content {
+    font-weight: lighter;
+    font-size: .9em;
+    padding: 1em 0;
+    height: 5em;
+}
+.testimonial-client {
+    font-weight: bold;
+    font-size: .9em;
+    padding: 4px 0;
+}
+.testimonial-client-title {
+    font-weight: bold;
+    font-size: .9em;
+    padding: 4px 0;
+}
+.testimonials-carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding: 2em 0;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 2em);
+}
+.testimonials-carousel-controls .dot {
+    background-color: rgb(0 174 134);
+    height: .5em;
+    width: .5em;
+    border-radius: 50%;
+    border: 1px solid rgb(0 174 134);
+    cursor: pointer;
+}
+.dot-active {
+    background-color: white !important;
+}
+
+/* customer images attribution */
+/* Photo by <a href="https://unsplash.com/@jackson_schaal?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jackson Schaal</a> on <a href="https://unsplash.com/photos/smiling-man-wearing-blue-denim-jacket-AR9mvykzSOA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> */
+/* Photo by <a href="https://unsplash.com/@alexstarnes?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">alex starnes</a> on <a href="https://unsplash.com/photos/woman-in-white-scoop-neck-shirt-smiling-WYE2UhXsU1Y?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> */
+/* Photo by <a href="https://unsplash.com/@darshanp9?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Darshan Patel</a> on <a href="https://unsplash.com/photos/man-wearing-eyeglasses-and-blue-shirt-inside-coffee-shop-QJEVpydulGs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> */
+
+/* quote image attribution */
+/* <a href="https://www.flaticon.com/free-icons/quote" title="quote icons">Quote icons created by Dave Gandy - Flaticon</a> */
+
+
+/* final CTA section */
+
+.final-cta {
+    background-color: rgb(204 239 231);
+    padding: 2em 4em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.final-cta-headings h1 {
+    margin: 0.5em 0;
+    font-size: 1.8em;
+}
+.final-cta-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5em;
+}
+.cta-learn-more {
+    background-color: rgb(250 250 250);
+    color: black;
+}
+
+/* footer */
+
+footer {
+    padding: 2em 1em;
+    margin: 0 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.copyright {
+    font-size: .7em;
+}
+.social-feeds {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.social-feeds-logo {
+    background-color: rgb(0 174 134);
+    padding: .5em;
+    width: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-feeds-logo img {
+    width: 1.1em;
+    height: 1.1em;
+}
