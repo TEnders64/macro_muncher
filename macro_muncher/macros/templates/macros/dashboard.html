@@ -1,11 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Macro Muncher - Dashboard</title>
-</head>
-<body>
-    <h1>Dashboard</h1>
-</body>
-</html>
+{% extends 'landing/landing_page.html' %}
+{% block title %}Macro Tracker{% endblock %}
+{% block navbar %}
+<nav class="navbar">
+    <div class="navbar-links">
+        <a href="#" class="dark-green">Home</a>
+        <a href="#" class="dark-gray">Team</a>
+        <a href="#" class="dark-gray">Blog</a>
+        <a href="#" class="dark-gray">Contact</a>
+    </div>
+    <div class="account-actions">
+        <a href="{% url 'profile' %}" class="block button">Profile</a>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Log Out" class="block button">
+        </form>
+    </div>
+</nav>
+{% endblock %}
+{% block main_content %}
+<h1>Dashboard</h1>
+<h2>Hello {{ user.first_name }}</h2>
+
+
+{% endblock %}

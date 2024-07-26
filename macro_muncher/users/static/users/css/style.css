@@ -28,6 +28,15 @@ body {
     font-size: 0.8em;
 }
 
+/* back button */
+.navbar {
+    display: block;
+}
+.nav-actions {
+    display: flex;
+    justify-content: end;
+}
+
 /* form styling */
 
 form {

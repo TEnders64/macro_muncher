@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Macro Muncher</title>
+    <title>Macro Muncher - {% block title %}Home{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'landing/css/style.css' %}">
+    {% block styles %}
+    {% endblock %}
 </head>
 <body>
+    {% block navbar %}
     <nav class="navbar">
         <div class="navbar-links">
             <a href="#" class="dark-green">Home</a>
@@ -20,6 +23,8 @@
             <a href="{% url 'login' %}" class="block button">Log In</a>
         </div>
     </nav>
+    {% endblock %}
+    {% block main_content %}
     <section class="jumbotron">
         <h1 class="dark">Get More From Your Food</h1>
         <h1 class="dark-green">Crunch Your Macros</h1>
@@ -119,6 +124,8 @@
             <button class="block button cta-learn-more">Learn More</button>
         </div>
     </section>
+    {% endblock %}
+    {% block footer %}
     <footer>
         <h6 class="copyright">2024 Macro Muncher, LLC. All rights reserved.</h6>
         <div class="social-feeds">
@@ -130,6 +137,7 @@
             </div>
         </div>
     </footer>
+    {% endblock %}
     <script src="{% static 'landing/js/script.js' %}"></script>
 </body>
 </html>

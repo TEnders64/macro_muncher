@@ -2,24 +2,30 @@ from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from .models import User
 from .forms import LoginForm, RegistrationForm
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 class LoginView(TemplateView):
     template_name = 'users/login.html'
     form_class = LoginForm
-    next = 'dashboard'
+    next_page = 'dashboard'
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()
         return render(request, self.template_name, {'form':form})
 
     def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            print('valid form')
+        email = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, email=email, password=password)
+        form = self.form_class()
+        if user is not None:
+            print('valid user')
+            login(request, user)
+            return redirect(self.next_page)
         else:
-            print('invalid form')
-        return render(request, self.template_name, {'form':form})
+            print('invalid credentials')
+            return render(request, self.template_name, {'form':form})
 
 
 class RegisterView(TemplateView):
@@ -50,3 +56,6 @@ class RegisterView(TemplateView):
             print(form.cleaned_data)
 
         return render(request, self.template_name, {'form':form})
+
+class ProfileView(TemplateView):
+    pass
