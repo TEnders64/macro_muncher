@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Macro Muncher</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/style.css' %}">
 </head>
 <body>
     <nav class="navbar">
@@ -16,8 +16,8 @@
             <a href="#" class="dark-gray">Contact</a>
         </div>
         <div class="account-actions">
-            <button class="block button">Sign Up</button>
-            <button class="block button">Log In</button>
+            <a href="{% url 'register' %}" class="block button">Sign Up</a>
+            <a href="{% url 'login' %}" class="block button">Log In</a>
         </div>
     </nav>
     <section class="jumbotron">
@@ -31,7 +31,7 @@
     <main class="features">
         <div class="features-card block">
             <div class="features-card-icon block">
-                <img src="{% static 'images/cutlery.png' %}" alt="Icon of a fork and spoon">
+                <img src="{% static 'landing/images/cutlery.png' %}" alt="Icon of a fork and spoon">
             </div>
             <div class="features-card-text">
                 <h2>Macro Tracking</h2>
@@ -43,7 +43,7 @@
         </div>
         <div class="features-card block">
             <div class="features-card-icon block">
-                <img src="{% static 'images/weight.png' %}" alt="Icon of a weight scale">
+                <img src="{% static 'landing/images/weight.png' %}" alt="Icon of a weight scale">
             </div>
             <div class="features-card-text">
                 <h2>Weight Tracking</h2>
@@ -55,7 +55,7 @@
         </div>
         <div class="features-card block">
             <div class="features-card-icon block">
-                <img src="{% static 'images/dumbbell.png' %}" alt="Icon of a dumbbell">
+                <img src="{% static 'landing/images/dumbbell.png' %}" alt="Icon of a dumbbell">
             </div>
             <div class="features-card-text">
                 <h2>Exercise Tracking</h2>
@@ -74,7 +74,7 @@
         <div class="testimonials-carousel">
             <article class="testimonial-individual block">
                 <div class="testimonial-image block">
-                    <img src="{% static 'images/headshot-1.jpg' %}" alt="testimonial headshot">
+                    <img src="{% static 'landing/images/headshot-1.jpg' %}" alt="testimonial headshot">
                 </div>
                 <div class="testimonial-text">
                     <p class="testimonial-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt accusamus quaerat tempore dignissimos, consequuntur voluptatem error libero quae, ipsam sapiente fugit, reiciendis architecto veritatis fugiat temporibus. Aliquid doloremque eligendi aliquam!</p>
@@ -84,7 +84,7 @@
             </article>
             <article class="testimonial-individual block">
                 <div class="testimonial-image block">
-                    <img src="{% static 'images/headshot-2.jpg' %}" alt="testimonial headshot">
+                    <img src="{% static 'landing/images/headshot-2.jpg' %}" alt="testimonial headshot">
                 </div>
                 <div class="testimonial-text">
                     <p class="testimonial-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt accusamus quaerat tempore dignissimos, consequuntur voluptatem error libero quae, ipsam sapiente fugit. Aliquid doloremque eligendi aliquam!</p>
@@ -94,7 +94,7 @@
             </article>
             <article class="testimonial-individual block">
                 <div class="testimonial-image block">
-                    <img src="{% static 'images/headshot-3.jpg' %}" alt="testimonial headshot">
+                    <img src="{% static 'landing/images/headshot-3.jpg' %}" alt="testimonial headshot">
                 </div>
                 <div class="testimonial-text">
                     <p class="testimonial-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt accusamus quaerat tempore dignissimos, aliquid doloremque eligendi aliquam!</p>
@@ -123,13 +123,13 @@
         <h6 class="copyright">2024 Macro Muncher, LLC. All rights reserved.</h6>
         <div class="social-feeds">
             <div class="social-feeds-logo block">
-                <img src="{% static 'images/fbook.png' %}" alt="facebook logo">
+                <img src="{% static 'landing/images/fbook.png' %}" alt="facebook logo">
             </div>
             <div class="social-feeds-logo block">
-                <img src="{% static 'images/insta.png' %}" alt="instagram logo">
+                <img src="{% static 'landing/images/insta.png' %}" alt="instagram logo">
             </div>
         </div>
     </footer>
-    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'landing/js/script.js' %}"></script>
 </body>
 </html>

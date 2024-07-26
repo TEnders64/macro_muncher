@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacroMuncher - Register</title>
+    <link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+</head>
+<body>
+    <form action="{% url 'register' %}" method="post">
+        <h1>Create Account</h1>
+        {% csrf_token %}
+        {{ form }}
+        <a href="{% url 'login' %}" class="sign-in">Already Have an Account ?</a>
+        <input type="submit" class="block button" value="SIGN UP">
+    </form>
+</body>
+</html>

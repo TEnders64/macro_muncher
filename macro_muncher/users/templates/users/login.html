@@ -5,9 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MacroMuncher - Login</title>
+    <link rel="stylesheet" href="{% static 'users/css/style.css' %}">
 </head>
 <body>
-    <h1>Login</h1>
-
+    <form action="{% url 'login' %}" method="post">
+        <h1>Login</h1>
+        {% csrf_token %}
+        {{ form }}
+        <a href="" class="forgot-password">Forgot Password ?</a>
+        <input type="submit" class="block button" value="LOGIN">
+    </form>
 </body>
 </html>

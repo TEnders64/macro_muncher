@@ -1,0 +1,76 @@
+/* minor reset */
+* {
+    /* border: 1px dashed red; */
+    margin: 0;
+    padding: 0;
+}
+
+/* font-basis */
+body {
+    font-size: 1em;
+    font-family: sans-serif;
+}
+
+/* blocks with drop shadows */
+.block {
+    border: 2px solid rgb(10 10 10);
+    box-shadow: 5px 5px rgb(51 60 58);
+    border-radius: 3px;
+}
+
+/* buttons */
+
+.button {
+    background-color: rgb(0 174 134);
+    padding: 10px 30px;
+    color: rgb(250 250 250);
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+/* form styling */
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.1em;
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 3em 0;
+}
+h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: .25em 0;
+    margin-bottom: 1em;
+    border-bottom: 2px solid black;
+}
+label {
+    margin: -0.5em 0;
+}
+input {
+    padding: 10px;
+    padding-right: 140px;
+    border: 2px solid rgb(10 10 10);
+    box-shadow: 5px 5px rgb(51 60 58);
+    border-radius: 3px;
+}
+input[type='submit'] {
+    margin: 1em 5em;
+}
+::placeholder {
+    color: rgb(104, 104, 104);
+}
+.forgot-password, .sign-in {
+    margin: 1em auto;
+    text-decoration: none;
+    font-size: 0.8em;
+    color: rgb(50 50 50);
+}
+
+/* errors */
+.errorlist {
+    list-style-type: none;
+    color: red;
+}
