@@ -1,20 +1,25 @@
 from django.db import models
 from users.models import User
 from django.conf import settings
+from django.urls import reverse
 
 # Create your models here.
 class FoodItem(models.Model):
     name = models.CharField(max_length=45, db_column='food_name')
-    serving_size = models.IntegerField
-    proteins = models.IntegerField
-    fats = models.IntegerField
-    carbs = models.IntegerField
-    this_serving = models.IntegerField
+    serving_size = models.IntegerField()
+    proteins = models.IntegerField()
+    fats = models.IntegerField()
+    carbs = models.IntegerField()
+    this_serving = models.IntegerField()
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse("dashboard")
+
 
 class Goal(models.Model):
     LOSE_WEIGHT = 'Lose'
@@ -56,7 +61,7 @@ class Goal(models.Model):
 
 
 class Measurement(models.Model):
-    weight = models.IntegerField
+    weight = models.IntegerField()
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 

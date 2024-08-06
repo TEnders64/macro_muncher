@@ -1,0 +1,109 @@
+/* helper grid classes  */
+.grid-col-span-2 {
+    grid-column: span 2;
+}
+
+main {
+    padding: 2em;
+}
+
+/* dashboard */
+h1 {
+    font-size: 1em;
+    padding: 1em .5em;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.dashboard > div {
+    min-height: 100px;
+}
+
+/* goal box */
+.goal-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+.goal-box .button {
+    background-color: rgb(58, 94, 197);
+}
+.goal-box-text h2 {
+    margin: .5em 0;
+}
+.goal-box-text h3 {
+    margin: .5em 0;
+    color: rgb(70, 70, 70);
+}
+
+/* metric boxes */
+.metric {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1em;
+    padding: 1em;
+}
+.metric-info {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1em;
+}
+.icon-container {
+    background-color: rgb(58, 94, 197);
+    padding: .3em;
+    width: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-container img {
+    width: 1.3em;
+    height: 1.3em;
+}
+.metric-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.metric-data p {
+    font-size: .7em;
+    color: rgb(70, 70, 70)
+}
+.metric-bar {
+    min-height: .7em;
+}
+.metric-bar-fill {
+    background-color: rgb(58, 94, 197);
+    min-height: .7em;
+    /* width: 1em;  width set by template via context */
+}
+
+/* icon attributions */
+/* <a href="https://www.flaticon.com/free-icons/meter" title="meter icons">Meter icons created by gravisio - Flaticon</a> */
+/* <a href="https://www.flaticon.com/free-icons/chicken-thigh" title="chicken thigh icons">Chicken thigh icons created by Freepik - Flaticon</a> */
+/* <a href="https://www.flaticon.com/free-icons/drip" title="drip icons">Drip icons created by apien - Flaticon</a> */
+/* <a href="https://www.flaticon.com/free-icons/bread" title="bread icons">Bread icons created by Tanah Basah - Flaticon</a> */
+
+/* food tracking */
+.tracking {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* food submission */
+.food-submission {
+
+}
+
+
+/* food log */
+.food-log {
+
+}

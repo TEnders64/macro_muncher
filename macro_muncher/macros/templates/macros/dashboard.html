@@ -1,5 +1,12 @@
 {% extends 'landing/landing_page.html' %}
+{% load static %}
+
 {% block title %}Macro Tracker{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'macros/css/style.css' %}">
+{% endblock %}
+
 {% block navbar %}
 <nav class="navbar">
     <div class="navbar-links">
@@ -17,9 +24,86 @@
     </div>
 </nav>
 {% endblock %}
+
 {% block main_content %}
-<h1>Dashboard</h1>
-<h2>Hello {{ user.first_name }}</h2>
-
-
+<main>
+    <h1>Dashboard</h1>
+    <div class="dashboard">
+        <div class="goal-box block grid-col-span-2">
+            <div class="goal-box-text">
+                <h2>Goal: {{ goal_type }}</h2>
+                <h3>Target Weight: {{ goal_weight }} lbs</h3>
+            </div>
+            <button class="button block">Change Goals</button>
+        </div>
+        <div class="total-calories metric block">
+            <div class="metric-info">
+                <div class="icon-container block">
+                    <img src="{% static 'macros/images/meter.png' %}" alt="Meter Icon">
+                </div>
+                <div class="metric-data">
+                    <p>Total Calories</p>
+                    <h4>921 / 2140</h4>
+                </div>
+            </div>
+            <div class="metric-bar block">
+                <div class="metric-bar-fill" style="width: {% widthratio cals_this_value cals_max_value cals_max_width %}%"></div>
+            </div>
+        </div>
+        <div class="total-protein metric block">
+            <div class="metric-info">
+                <div class="icon-container block">
+                    <img src="{% static 'macros/images/chicken-thigh.png' %}" alt="Chicken Drumstick Icon">
+                </div>
+                <div class="metric-data">
+                    <p>Protein</p>
+                    <h4>56 / 100</h4>
+                </div>
+            </div>
+            <div class="metric-bar block">
+                <div class="metric-bar-fill" style="width: {% widthratio prot_this_value prot_max_value prot_max_width %}%"></div>
+            </div>
+        </div>
+        <div class="total-fat metric block">
+            <div class="metric-info">
+                <div class="icon-container block">
+                    <img src="{% static 'macros/images/water-drop.png' %}" alt="Water Drop Icon">
+                </div>
+                <div class="metric-data">
+                    <p>Fat</p>
+                    <h4>25 / 90</h4>
+                </div>
+            </div>
+            <div class="metric-bar block">
+                <div class="metric-bar-fill" style="width: {% widthratio fats_this_value fats_max_value fats_max_width %}%"></div>
+            </div>
+        </div>
+        <div class="total-carb metric block">
+            <div class="metric-info">
+                <div class="icon-container block">
+                    <img src="{% static 'macros/images/bread.png' %}" alt="Bread Icon">
+                </div>
+                <div class="metric-data">
+                    <p>Carbohydrates</p>
+                    <h4>118 / 300</h4>
+                </div>
+            </div>
+            <div class="metric-bar block">
+                <div class="metric-bar-fill" style="width: {% widthratio carbs_this_value carbs_max_value carbs_max_width %}%"></div>
+            </div>
+        </div>
+    </div>
+    <div class="tracking">
+        <div class="food-submission">
+            <h1>Tracking</h1>
+            <form action="{% url 'food_item' %}" method="post">
+                {% csrf_token %}
+                {{ form }}
+            </form>
+        </div>
+        <div class="food-log grid-col-span-2">
+            <h1>Today's Food Log</h1>
+        </div>
+    </div>
+</main>
 {% endblock %}
