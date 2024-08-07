@@ -98,12 +98,48 @@
             <h1>Tracking</h1>
             <form action="{% url 'food_item' %}" method="post">
                 {% csrf_token %}
-                {{ form }}
+                {{ form_item }}
+                <input type="submit" class="block button" value="TRACK IT">
             </form>
         </div>
-        <div class="food-log grid-col-span-2">
+        <div class="food-log grid-col-span-2 grid-row-span-2">
             <h1>Today's Food Log</h1>
+            <div class="food-log-table">
+                <table>
+                    <thead>
+                        <th>Food</th>
+                        <th>Your Serving</th>
+                        <th>Protein</th>
+                        <th>Fat</th>
+                        <th>Carbs</th>
+                        <th>Calories</th>
+                    </thead>
+                    <tbody>
+                        {% for food_item in food_log %}
+                        <tr>
+                            <td>{{ food_item.name }}</td>
+                            <td>{{ food_item.this_serving }}</td>
+                            <td>{{ food_item.proteins }}</td>
+                            <td>{{ food_item.fats }}</td>
+                            <td>{{ food_item.carbs }}</td>
+                            <td>SUM</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="measurement-submission">
+            <h1>Today's Weight</h1>
+            <form action="{% url 'measurement' %}" method="post">
+                {% csrf_token %}
+                <div class="weight-input-decrement">-</div>
+                <div class="weight-input-increment">+</div>
+                {{ form_measurement }}
+                <input type="submit" class="block button" value="TRACK IT">
+            </form>
         </div>
     </div>
 </main>
+<script src="{% static 'macros/js/script.js' %}"></script>
 {% endblock %}

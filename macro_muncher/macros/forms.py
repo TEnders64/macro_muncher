@@ -1,8 +1,38 @@
-from django.forms import ModelForm
-from .models import FoodItem
+from django import forms
+from .models import FoodItem, Measurement
 
 
-class FoodItemForm(ModelForm):
+class FoodItemForm(forms.ModelForm):
     class Meta:
         model = FoodItem
-        fields = ['name','serving_size','proteins','fats','carbs','this_serving','user']
+        fields = ['name','serving_size','proteins','fats','carbs','this_serving']
+        widgets = {
+            'name': forms.TextInput(
+                {'placeholder':'Food Name'}
+            ),
+            'serving_size': forms.NumberInput(
+                {'placeholder':'Serving Size (g)', 'min': 0}
+            ),
+            'proteins': forms.NumberInput(
+                {'placeholder':'Protein (g)', 'min': 0}
+            ),
+            'fats': forms.NumberInput(
+                {'placeholder':'Fat (g)', 'min': 0}
+            ),
+            'carbs': forms.NumberInput(
+                {'placeholder':'Carbs (g)', 'min': 0}
+            ),
+            'this_serving': forms.NumberInput(
+                {'placeholder':'This Serving (g)', 'min': 0}
+            ),
+        }
+
+class MeasurementForm(forms.ModelForm):
+    class Meta:
+        model = Measurement
+        fields = ['weight']
+        widgets = {
+            'weight': forms.NumberInput(
+                {'min': 0, 'class': 'weight-input'}
+            )
+        }

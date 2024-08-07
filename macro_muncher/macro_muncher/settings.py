@@ -132,5 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Custom User Model
 AUTH_USER_MODEL = 'users.User'
 
+# Auth Routing
+LOGIN_URL = '/accounts/login'
 LOGIN_REDIRECT_URL = '/macros/dashboard'
 LOGOUT_REDIRECT_URL = '/'
