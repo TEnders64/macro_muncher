@@ -104,15 +104,17 @@
         </div>
         <div class="food-log grid-col-span-2 grid-row-span-2">
             <h1>Today's Food Log</h1>
-            <div class="food-log-table">
+            <div class="food-log-table block">
                 <table>
                     <thead>
-                        <th>Food</th>
-                        <th>Your Serving</th>
-                        <th>Protein</th>
-                        <th>Fat</th>
-                        <th>Carbs</th>
-                        <th>Calories</th>
+                        <tr class="thead">
+                            <th>Food</th>
+                            <th>Serving</th>
+                            <th>Protein</th>
+                            <th>Fat</th>
+                            <th>Carbs</th>
+                            <th>Calories</th>
+                        </tr>
                     </thead>
                     <tbody>
                         {% for food_item in food_log %}

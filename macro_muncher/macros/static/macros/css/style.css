@@ -98,12 +98,11 @@ h1 {
 .tracking {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 
 /* food submission */
-.food-submission {
 
-}
 .food-submission form {
     display: flex;
     flex-direction: column;
@@ -134,8 +133,35 @@ h1 {
 }
 
 /* food log */
-.food-log {
-
+.food-log-table table {
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+    padding: 1em;
+}
+.food-log-table .thead {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: rgb(0 174 134);
+    color: white;
+}
+.food-log-table th {
+    padding: 1em 0;
+    font-weight: normal;
+    text-align: center;
+}
+.food-log-table tbody {
+    background-color: rgb(70, 70, 70);
+    color: white;
+}
+.food-log-table tbody tr {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: .5em 0;
+    text-align: center;
+    font-size: .8em;
+}
+.food-log-table tr td {
+    padding: 0 .5em;
 }
 
 /* measurement submission */
@@ -148,14 +174,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-.measurement-submission {
-
-}
 .measurement-submission form {
     display: flex;
     flex-direction: column;
