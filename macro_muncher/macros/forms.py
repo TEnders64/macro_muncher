@@ -1,5 +1,5 @@
 from django import forms
-from .models import FoodItem, Measurement
+from .models import FoodItem, Measurement, Goal
 
 
 class FoodItemForm(forms.ModelForm):
@@ -35,4 +35,20 @@ class MeasurementForm(forms.ModelForm):
             'weight': forms.NumberInput(
                 {'min': 0, 'class': 'weight-input'}
             )
+        }
+
+class GoalForm(forms.ModelForm):
+    class Meta:
+        model = Goal
+        fields = ['goal_type', 'goal_pacing', 'goal_weight']
+        widgets = {
+            'goal_type': forms.Select(
+                {'class': 'goal-type'}
+            ),
+            'goal_pacing': forms.Select(
+                {'class': 'goal-pacing'}
+            ),
+            'goal_weight': forms.NumberInput(
+                {'class': 'goal-weight', 'min': 0}
+            ),
         }

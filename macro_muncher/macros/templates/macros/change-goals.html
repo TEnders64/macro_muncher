@@ -1,0 +1,39 @@
+{% extends 'landing/landing_page.html' %}
+{% load static %}
+
+{% block title %}Change Goals{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'macros/css/style.css' %}">
+{% endblock %}
+
+{% block navbar %}
+<nav class="navbar">
+    <div class="navbar-links">
+        <a href="#" class="dark-green">Home</a>
+        <a href="#" class="dark-gray">Team</a>
+        <a href="#" class="dark-gray">Blog</a>
+        <a href="#" class="dark-gray">Contact</a>
+    </div>
+    <div class="account-actions">
+        <a href="{% url 'dashboard' %}" class="block button">Go Back</a>
+        <a href="{% url 'profile' %}" class="block button">Profile</a>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Log Out" class="block button">
+        </form>
+    </div>
+</nav>
+{% endblock %}
+
+{% block main_content %}
+<h1>Hello Goals</h1>
+<div class="change-goals">
+    <form class="change-goals-form" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" class="block button" value="Set Goal">
+    </form>
+</div>
+{% endblock %}
+

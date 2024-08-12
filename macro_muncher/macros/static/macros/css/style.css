@@ -219,3 +219,35 @@ input::-webkit-inner-spin-button {
     box-sizing: border-box;
     border-left: 2px solid black;
 }
+
+/* goal changing form template */
+.change-goals {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.1em;
+    max-width: 50%;
+    margin: 0 auto; */
+}
+.change-goals-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.1em;
+    margin: 0 auto;
+    max-width: 50%;
+}
+.change-goals-form label {
+    display: none;
+}
+
+.change-goals-form input, .change-goals-form select {
+    padding: 1em;
+    border: 2px solid rgb(10 10 10);
+    box-shadow: 5px 5px rgb(51 60 58);
+    border-radius: 3px;
+    text-align: center;
+}
+.change-goals-form input[type='submit'] {
+    margin: 1em;
+}

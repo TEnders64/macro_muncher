@@ -52,7 +52,7 @@ class Goal(models.Model):
         max_length=12
     )
 
-    goal_weight = models.IntegerField(blank=True)
+    goal_weight = models.IntegerField()
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 

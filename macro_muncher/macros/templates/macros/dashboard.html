@@ -34,7 +34,7 @@
                 <h2>Goal: {{ goal_type }}</h2>
                 <h3>Target Weight: {{ goal_weight }} lbs</h3>
             </div>
-            <button class="button block">Change Goals</button>
+            <a href="{% url 'goals' %}" class="block button">Change Goals</a>
         </div>
         <div class="total-calories metric block">
             <div class="metric-info">
@@ -119,7 +119,7 @@
                     <tbody>
                         {% for food_item in food_log %}
                         <tr>
-                            <td>{{ food_item.name }}</td>
+                            <td>{{ food_item.name|truncatechars:6 }}</td>
                             <td>{{ food_item.this_serving }}</td>
                             <td>{{ food_item.proteins }}</td>
                             <td>{{ food_item.fats }}</td>

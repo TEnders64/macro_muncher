@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from .forms import FoodItemForm, MeasurementForm
-from django.views.generic.edit import CreateView
+from .forms import FoodItemForm, MeasurementForm, GoalForm
+from django.views.generic.edit import CreateView, FormView
 from .models import FoodItem, Measurement
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -45,6 +45,15 @@ class FoodItemCreateView(LoginRequiredMixin, CreateView):
 class MeasurementCreateView(LoginRequiredMixin, CreateView):
     model = Measurement
     fields = ['weight']
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+class GoalUpdateView(LoginRequiredMixin, FormView):
+    template_name = 'macros/change-goals.html'
+    form_class = GoalForm
+    success_url = '/macros/dashboard'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
