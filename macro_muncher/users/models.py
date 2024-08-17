@@ -37,27 +37,10 @@ class UserManager(BaseUserManager):
         return user
 
 class User(AbstractBaseUser, PermissionsMixin):
-    MALE = 'M'
-    FEMALE = 'F'
-    NO_ANSWER = 'N'
-    GENDER_CHOICES = [
-        (MALE, 'Male'),
-        (FEMALE, 'Female'),
-        (NO_ANSWER, 'Prefer Not to Answer')
-    ]
-
     first_name = models.CharField(max_length=45)
     last_name = models.CharField(max_length=45)
-    phone_number = models.CharField(max_length=12, null=True)
     email = models.EmailField(max_length=254, unique=True)
     username = models.CharField(max_length=45)
-    date_of_birth = models.DateField(blank=True, null=True)
-    gender = models.CharField(
-        choices=GENDER_CHOICES,
-        default=NO_ANSWER,
-        max_length=20
-    )
-    address = models.TextField
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -75,3 +58,46 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.username
 
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    MALE = 'M'
+    FEMALE = 'F'
+    NO_ANSWER = 'N'
+    GENDER_CHOICES = [
+        (MALE, 'Male'),
+        (FEMALE, 'Female'),
+        (NO_ANSWER, 'Prefer Not to Answer')
+    ]
+
+    gender = models.CharField(
+        choices=GENDER_CHOICES,
+        default=NO_ANSWER,
+        max_length=20
+    )
+    date_of_birth = models.DateField(blank=True, null=True)
+    height = models.IntegerField(default=60, null=True)
+
+    # Activity-level Multiplier based on Mifflin-St.Jeor Equation
+    INACTIVE = 1.2
+    SLIGHTLY_ACTIVE = 1.375
+    MODERATELY_ACTIVE = 1.55
+    VERY_ACTIVE = 1.7
+    EXTREMELY_ACTIVE = 1.9
+
+    ACTIVITY_LEVEL_CHOICES = [
+        (INACTIVE, 'Inactive/Sedentary'),
+        (SLIGHTLY_ACTIVE, 'Slightly Active'),
+        (MODERATELY_ACTIVE, 'Moderately Active'),
+        (VERY_ACTIVE, 'Very Active'),
+        (EXTREMELY_ACTIVE, 'Extremely Active'),
+    ]
+
+    activity_level = models.CharField(
+        choices=ACTIVITY_LEVEL_CHOICES,
+        default=INACTIVE,
+        max_length=20
+    )
+
+    def __str__(self):
+        return self.user.first_name+"'s Profile"

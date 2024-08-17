@@ -38,11 +38,14 @@ h1 {
     background-color: rgb(58, 94, 197);
 }
 .goal-box-text h2 {
-    margin: .5em 0;
+    margin: 0;
+    margin-bottom: .5em 0;
+    font-size: 1.2em;
 }
 .goal-box-text h3 {
-    margin: .5em 0;
+    margin-top: .5em;
     color: rgb(70, 70, 70);
+    font-size: 1em;
 }
 
 /* metric boxes */
@@ -195,59 +198,83 @@ input::-webkit-inner-spin-button {
     margin: 1em;
 }
 
-.weight-input-decrement {
+.measurement-submission .weight-input-decrement {
     padding: .7em 1em;
     font-weight: bold;
     text-align: center;
     position: absolute;
     top: .16em;
     left: .1em;
-    background-color: rgb(58, 94, 197);
-    color: white;
+    color: black;
     box-sizing: border-box;
-    border-right: 2px solid black;
 }
-.weight-input-increment {
+.measurement-submission .weight-input-increment {
     padding: .7em 1em;
     font-weight: bold;
     text-align: center;
     position: absolute;
     top: .16em;
     right: .1em;
-    background-color: rgb(58, 94, 197);
-    color: white;
+    color: black;
     box-sizing: border-box;
-    border-left: 2px solid black;
 }
 
 /* goal changing form template */
 .change-goals {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.1em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
     max-width: 50%;
-    margin: 0 auto; */
+    margin: 0 auto;
+}
+.change-goals h1 {
+    border-bottom: 2px solid black;
 }
 .change-goals-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.1em;
-    margin: 0 auto;
-    max-width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1em;
+    position: relative;
 }
 .change-goals-form label {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.change-goals-form input, .change-goals-form select {
+.change-goals-form input {
     padding: 1em;
-    border: 2px solid rgb(10 10 10);
-    box-shadow: 5px 5px rgb(51 60 58);
-    border-radius: 3px;
     text-align: center;
+}
+.change-goals-form select {
+    padding: 1em;
 }
 .change-goals-form input[type='submit'] {
     margin: 1em;
+}
+.change-goals-form a {
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+.change-goals-form .weight-input-decrement {
+    padding: .8em;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    bottom: 5.5em;
+    /* left: 7em; */
+    color: black;
+    box-sizing: border-box;
+}
+.change-goals-form .weight-input-increment {
+    padding: .8em;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    bottom: 5.5em;
+    right: .1em;
+    color: black;
+    box-sizing: border-box;
 }

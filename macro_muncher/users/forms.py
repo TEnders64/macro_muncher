@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from .models import User
+from .models import User, Profile
 
 # Corresponding Login, Register, and Profile forms below
 class LoginForm(AuthenticationForm):
@@ -31,3 +31,13 @@ class RegistrationForm(UserCreationForm):
                 {'placeholder':'me@example.com'}
             ),
         }
+
+class UpdateUserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['email']
+
+class UpdateProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['gender', 'date_of_birth', 'height', 'activity_level']

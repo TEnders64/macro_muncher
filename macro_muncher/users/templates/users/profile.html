@@ -1,0 +1,37 @@
+{% extends 'landing/landing_page.html' %}
+{% load static %}
+
+{% block title %}Update Profile{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'macros/css/style.css' %}">
+{% endblock %}
+
+{% block navbar %}
+<nav class="navbar">
+    <div class="navbar-links">
+        <a href="#" class="dark-green">Home</a>
+        <a href="#" class="dark-gray">Team</a>
+        <a href="#" class="dark-gray">Blog</a>
+        <a href="#" class="dark-gray">Contact</a>
+    </div>
+    <div class="account-actions">
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Log Out" class="block button">
+        </form>
+    </div>
+</nav>
+{% endblock %}
+
+{% block main_content %}
+<div class="change-goals">
+    <h1 class="grid-col-span-2">Change Goals</h1>
+    <form class="change-goals-form grid-col-span-2" method="post">
+        {% csrf_token %}
+        {{ user_form }}
+    </form>
+</div>
+<script src="{% static 'macros/js/change-goals-script.js' %}"></script>
+{% endblock %}
+

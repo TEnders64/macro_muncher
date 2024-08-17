@@ -20,6 +20,9 @@ class FoodItem(models.Model):
     def get_absolute_url(self):
         return reverse("dashboard")
 
+    def total_calories(self):
+        return self.proteins*4 + self.fats*9 + self.carbs*4
+
 
 class Goal(models.Model):
     LOSE_WEIGHT = 'Lose'
@@ -67,3 +70,44 @@ class Measurement(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse("dashboard")
+
+
+# class Standards(models.Model):
+#     MALE = 'M'
+#     FEMALE = 'F'
+#     SEX_CHOICES = [
+#         (MALE, 'Male'),
+#         (FEMALE, 'Female')
+#     ]
+
+#     # Activity-level Multiplier based on Mifflin-St.Jeor Equation
+#     INACTIVE = 1.2
+#     SLIGHTLY_ACTIVE = 1.375
+#     MODERATELY_ACTIVE = 1.55
+#     VERY_ACTIVE = 1.7
+#     EXTREMELY_ACTIVE = 1.9
+
+#     ACTIVITY_LEVEL_CHOICES = [
+#         (INACTIVE, 'Inactive/Sedentary'),
+#         (SLIGHTLY_ACTIVE, 'Slightly Active'),
+#         (MODERATELY_ACTIVE, 'Moderately Active'),
+#         (VERY_ACTIVE, 'Very Active'),
+#         (EXTREMELY_ACTIVE, 'Extremely Active'),
+#     ]
+
+#     sex = models.CharField(
+#         choices=SEX_CHOICES,
+#         max_length=20
+#     )
+#     age = models.IntegerField()
+#     height = models.IntegerField()
+#     weight = models.IntegerField()
+#     activity_level = models.CharField(
+#         choices=ACTIVITY_LEVEL_CHOICES,
+#         default=INACTIVE,
+#         max_length=20
+#     )
+

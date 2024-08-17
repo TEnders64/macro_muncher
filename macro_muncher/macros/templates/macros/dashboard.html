@@ -31,8 +31,9 @@
     <div class="dashboard">
         <div class="goal-box block grid-col-span-2">
             <div class="goal-box-text">
-                <h2>Goal: {{ goal_type }}</h2>
-                <h3>Target Weight: {{ goal_weight }} lbs</h3>
+                <h2>Goal: {{ current_goal.goal_type }} Weight</h2>
+                <h3>Target: {{ current_goal.goal_weight }} lbs</h3>
+                <h3>Current: {{ last_measurement.weight }} lbs</h3>
             </div>
             <a href="{% url 'goals' %}" class="block button">Change Goals</a>
         </div>
@@ -124,7 +125,7 @@
                             <td>{{ food_item.proteins }}</td>
                             <td>{{ food_item.fats }}</td>
                             <td>{{ food_item.carbs }}</td>
-                            <td>SUM</td>
+                            <td>{{ food_item.total_calories }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -143,5 +144,5 @@
         </div>
     </div>
 </main>
-<script src="{% static 'macros/js/script.js' %}"></script>
+<script src="{% static 'macros/js/dashboard-script.js' %}"></script>
 {% endblock %}

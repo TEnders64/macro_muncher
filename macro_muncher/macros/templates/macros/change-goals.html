@@ -16,7 +16,6 @@
         <a href="#" class="dark-gray">Contact</a>
     </div>
     <div class="account-actions">
-        <a href="{% url 'dashboard' %}" class="block button">Go Back</a>
         <a href="{% url 'profile' %}" class="block button">Profile</a>
         <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
@@ -27,13 +26,17 @@
 {% endblock %}
 
 {% block main_content %}
-<h1>Hello Goals</h1>
 <div class="change-goals">
-    <form class="change-goals-form" method="post">
+    <h1 class="grid-col-span-2">Change Goals</h1>
+    <form class="change-goals-form grid-col-span-2" method="post">
         {% csrf_token %}
+        <div class="weight-input-decrement">-</div>
+        <div class="weight-input-increment">+</div>
         {{ form }}
+        <a href="{% url 'dashboard' %}" class="block button">Cancel</a>
         <input type="submit" class="block button" value="Set Goal">
     </form>
 </div>
+<script src="{% static 'macros/js/change-goals-script.js' %}"></script>
 {% endblock %}
 

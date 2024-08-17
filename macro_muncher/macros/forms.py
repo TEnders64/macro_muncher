@@ -1,6 +1,6 @@
 from django import forms
 from .models import FoodItem, Measurement, Goal
-
+from django.utils.translation import gettext_lazy as _
 
 class FoodItemForm(forms.ModelForm):
     class Meta:
@@ -43,12 +43,21 @@ class GoalForm(forms.ModelForm):
         fields = ['goal_type', 'goal_pacing', 'goal_weight']
         widgets = {
             'goal_type': forms.Select(
-                {'class': 'goal-type'}
+                {'class': 'goal-type block'}
             ),
             'goal_pacing': forms.Select(
-                {'class': 'goal-pacing'}
+                {'class': 'goal-pacing block'}
             ),
             'goal_weight': forms.NumberInput(
-                {'class': 'goal-weight', 'min': 0}
+                {
+                    'class': 'goal-weight block',
+                    'min': 0,
+                    'value': '150'
+                }
             ),
+        }
+        labels = {
+            'goal_type': _('Goal:'),
+            'goal_pacing': _('Pacing:'),
+            'goal_weight': _('Weight:'),
         }

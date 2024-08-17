@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView
-from .models import User
-from .forms import LoginForm, RegistrationForm
-from django.contrib.auth import authenticate, login, logout
+from django.views.generic import TemplateView, UpdateView
+from .models import User, Profile
+from .forms import LoginForm, RegistrationForm, UpdateUserForm, UpdateProfileForm
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+
 
 # Create your views here.
 class LoginView(TemplateView):
@@ -57,5 +59,11 @@ class RegisterView(TemplateView):
 
         return render(request, self.template_name, {'form':form})
 
-class ProfileView(TemplateView):
-    pass
+class ProfileView(LoginRequiredMixin, TemplateView):
+    template_name = 'users/profile.html'
+    success_url = '/macros/dashboard'
+    user_form = UpdateUserForm
+    profile_form = UpdateProfileForm
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {'user_form': self.user_form(instance=request.user), 'profile_form': self.profile_form(instance=request.user)})
