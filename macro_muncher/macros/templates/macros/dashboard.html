@@ -44,11 +44,15 @@
                 </div>
                 <div class="metric-data">
                     <p>Total Calories</p>
-                    <h4>921 / 2140</h4>
+                    <h4>{{ cals_this_value }} / {{ cals_max_value }}</h4>
                 </div>
             </div>
             <div class="metric-bar block">
+                {% if cals_this_value <= cals_max_value %}
                 <div class="metric-bar-fill" style="width: {% widthratio cals_this_value cals_max_value cals_max_width %}%"></div>
+                {% else %}
+                <div class="metric-bar-fill" style="width: 100%"></div>
+                {% endif %}
             </div>
         </div>
         <div class="total-protein metric block">
@@ -58,11 +62,15 @@
                 </div>
                 <div class="metric-data">
                     <p>Protein</p>
-                    <h4>56 / 100</h4>
+                    <h4>{{ prot_this_value }} / {{ prot_max_value }}</h4>
                 </div>
             </div>
             <div class="metric-bar block">
+                {% if prot_this_value <= prot_max_value %}
                 <div class="metric-bar-fill" style="width: {% widthratio prot_this_value prot_max_value prot_max_width %}%"></div>
+                {% else %}
+                <div class="metric-bar-fill" style="width: 100%"></div>
+                {% endif %}
             </div>
         </div>
         <div class="total-fat metric block">
@@ -72,11 +80,15 @@
                 </div>
                 <div class="metric-data">
                     <p>Fat</p>
-                    <h4>25 / 90</h4>
+                    <h4>{{ fats_this_value }} / {{ fats_max_value }}</h4>
                 </div>
             </div>
             <div class="metric-bar block">
+                {% if fats_this_value <= fats_max_value %}
                 <div class="metric-bar-fill" style="width: {% widthratio fats_this_value fats_max_value fats_max_width %}%"></div>
+                {% else %}
+                <div class="metric-bar-fill" style="width: 100%"></div>
+                {% endif %}
             </div>
         </div>
         <div class="total-carb metric block">
@@ -86,11 +98,15 @@
                 </div>
                 <div class="metric-data">
                     <p>Carbohydrates</p>
-                    <h4>118 / 300</h4>
+                    <h4>{{ carbs_this_value }} / {{ carbs_max_value }}</h4>
                 </div>
             </div>
             <div class="metric-bar block">
+                {% if carbs_this_value <= carbs_max_value %}
                 <div class="metric-bar-fill" style="width: {% widthratio carbs_this_value carbs_max_value carbs_max_width %}%"></div>
+                {% else %}
+                <div class="metric-bar-fill" style="width: 100%"></div>
+                {% endif %}
             </div>
         </div>
     </div>
